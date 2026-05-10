@@ -89,3 +89,10 @@ Catatan Khusus
 
 • Jika ada modul / plugin khusus yang Anda gunakan (mis. integrasi API tertentu, CMS, atau plugin analytics), tambahkan bagian singkat terkait integrasi tersebut agar kontributor lain memahami konteksnya.
 
+## 🔐 Keamanan Kredensial TikTok API
+
+Proyek ini menggunakan OAuth 2.0. Jangan pernah memasukkan token asli ke dalam kode.
+1. Salin `.env.example` menjadi `.env`.
+2. Masukkan `Client Key` dan `Secret` dari TikTok Developer Console.
+3. Gunakan skrip `auth-refresh.js` untuk memperbarui `REFRESH_TOKEN` setiap 30 hari.
+4. Di CI/CD (GitHub Actions), gunakan **GitHub Secrets** untuk variabel ini.
